@@ -19,6 +19,7 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec",
+    "prepublish": "npm run build",
     "generate": "stencil generate"
   },
   "devDependencies": {
