@@ -6,10 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface KjAccordion {
-        "expanded": boolean;
-        "title": string;
-    }
     interface KjButton {
         "header": string;
     }
@@ -28,12 +24,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLKjAccordionElement extends Components.KjAccordion, HTMLStencilElement {
-    }
-    var HTMLKjAccordionElement: {
-        prototype: HTMLKjAccordionElement;
-        new (): HTMLKjAccordionElement;
-    };
     interface HTMLKjButtonElement extends Components.KjButton, HTMLStencilElement {
     }
     var HTMLKjButtonElement: {
@@ -59,7 +49,6 @@ declare global {
         new (): HTMLKjMultiselectElement;
     };
     interface HTMLElementTagNameMap {
-        "kj-accordion": HTMLKjAccordionElement;
         "kj-button": HTMLKjButtonElement;
         "kj-inputbutton": HTMLKjInputbuttonElement;
         "kj-modal": HTMLKjModalElement;
@@ -67,10 +56,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface KjAccordion {
-        "expanded"?: boolean;
-        "title"?: string;
-    }
     interface KjButton {
         "header"?: string;
         "onOnclick"?: (event: CustomEvent<any>) => void;
@@ -92,7 +77,6 @@ declare namespace LocalJSX {
         "selectedOptions"?: any[];
     }
     interface IntrinsicElements {
-        "kj-accordion": KjAccordion;
         "kj-button": KjButton;
         "kj-inputbutton": KjInputbutton;
         "kj-modal": KjModal;
@@ -103,7 +87,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "kj-accordion": LocalJSX.KjAccordion & JSXBase.HTMLAttributes<HTMLKjAccordionElement>;
             "kj-button": LocalJSX.KjButton & JSXBase.HTMLAttributes<HTMLKjButtonElement>;
             "kj-inputbutton": LocalJSX.KjInputbutton & JSXBase.HTMLAttributes<HTMLKjInputbuttonElement>;
             "kj-modal": LocalJSX.KjModal & JSXBase.HTMLAttributes<HTMLKjModalElement>;

@@ -26,7 +26,8 @@ export class KjModal implements ComponentInterface {
   }
   
   showModal() {
-    this.modalContainer.style.display = "block";
+    if(this.modalContainer)
+      this.modalContainer.style.display = "block";
   }
   
   closeModal() {
