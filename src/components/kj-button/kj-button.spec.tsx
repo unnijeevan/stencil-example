@@ -9,7 +9,7 @@ describe('kj-button', () => {
     });
     expect(page.root).toEqualHtml(`
       <kj-button header="header">
-      <button class="btn btn-primary" type="button">
+      <button class="btn btn-block btn-outline-secondary" type="button">
         header
       </button>
       </kj-button>

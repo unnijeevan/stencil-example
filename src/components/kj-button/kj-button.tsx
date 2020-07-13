@@ -14,7 +14,7 @@ export class KjButton implements ComponentInterface {
 
   render() {
     return (
-      <button type="button" class="btn btn-secondary btn-block" onClick= {()=> { this.handleClick();}}>
+      <button type="button" class="btn btn-outline-secondary btn-block" onClick= {()=> { this.handleClick();}}>
         {this.header}
       </button>
     );

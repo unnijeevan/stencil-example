@@ -12,9 +12,9 @@ describe('kj-inputbutton', () => {
         <div class="input-group">
         <input class="form-control" placeholder="" type="text" value="">
         <div class="input-group-append">
-          <button type="button">
+          <button type="button" class="btn btn-outline-secondary">
             <span aria-hidden="true">
-              &amp;#10004
+              Save
             </span>
           </button>
         </div>
