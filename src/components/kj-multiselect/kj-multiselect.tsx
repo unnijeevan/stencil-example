@@ -39,9 +39,9 @@ export class KjMultiselect {
       if(this.displayProperty)
         name = option[this.displayProperty];
       return(
-       <div class="multi-select-item">
-         <label class="check-box-label">
-            <input type="checkbox" checked={this._selectedOptions.indexOf(option) !== -1} 
+       <div class="form-check">
+         <label class="form-check-label">
+            <input type="form-check-input" checked={this._selectedOptions.indexOf(option) !== -1} 
               onChange={e => {
                 this.handleSelect(e, option);
               }}/>

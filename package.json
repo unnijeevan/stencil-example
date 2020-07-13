@@ -1,5 +1,5 @@
 {
-  "name": "stencil-example",
+  "name": "@unnijeevan/stencil-example",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
