@@ -10,6 +10,7 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/stencil-example/stencil-example.js",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "files": [
     "dist/",
     "loader/"
