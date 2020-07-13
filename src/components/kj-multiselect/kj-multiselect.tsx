@@ -41,7 +41,7 @@ export class KjMultiselect {
       return(
        <div class="form-check">
          <label class="form-check-label">
-            <input type="form-check-input" checked={this._selectedOptions.indexOf(option) !== -1} 
+            <input type="checkbox" class="form-check-input" checked={this._selectedOptions.indexOf(option) !== -1} 
               onChange={e => {
                 this.handleSelect(e, option);
               }}/>
