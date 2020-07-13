@@ -17,7 +17,6 @@ describe('kj-multiselect', () => {
   it('renders', async () => {    
     expect(page.body).toEqualHtml(`
       <kj-multiselect>
-      <mock:shadow-root></mock:shadow-root> 
       </kj-multiselect>
     `);
   });
@@ -30,16 +29,15 @@ describe('kj-multiselect', () => {
 
     expect(page.body).toEqualHtml(`
       <kj-multiselect>
-      <mock:shadow-root>
-      <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox">
+      <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" class="form-check-input">
              one
              </label>
            </div>
-           <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox">
+           <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" class="form-check-input">
                two
              </label>
            </div> 
@@ -56,16 +54,15 @@ describe('kj-multiselect', () => {
 
     expect(page.body).toEqualHtml(`
       <kj-multiselect>
-      <mock:shadow-root>
-      <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox">
+      <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" class="form-check-input">
              one
              </label>
            </div>
-           <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox">
+           <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" class="form-check-input">
                two
              </label>
            </div> 
@@ -82,16 +79,15 @@ describe('kj-multiselect', () => {
 
     expect(page.body).toEqualHtml(`
       <kj-multiselect>
-      <mock:shadow-root>
-      <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox" checked>
+      <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" checked class="form-check-input">
              one
              </label>
            </div>
-           <div class="multi-select-item">
-             <label class="check-box-label">
-               <input type="checkbox">
+           <div class="form-check">
+             <label class="form-check-label">
+               <input type="checkbox" class="form-check-input">
                two
              </label>
            </div> 
@@ -102,7 +98,7 @@ describe('kj-multiselect', () => {
   it('emits event on select', async() => {    
     element.options = ['one', 'two'];
     await page.waitForChanges();
-    let checkbox = page.root.shadowRoot.querySelector('input');
+    let checkbox = page.root.querySelector('input');
     let checkboxSpy = jest.fn();
     page.win.addEventListener('onselect', checkboxSpy);
 

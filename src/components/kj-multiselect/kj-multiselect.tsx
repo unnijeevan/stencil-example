@@ -1,9 +1,7 @@
 import { Component, Prop, h, Event, EventEmitter, State, Watch } from '@stencil/core';
 
 @Component({
-  tag: 'kj-multiselect',
-  styleUrl: 'kj-multiselect.css',
-  shadow: true
+  tag: 'kj-multiselect'
 })
 export class KjMultiselect {
 
@@ -19,7 +17,7 @@ export class KjMultiselect {
   }
 
   @Watch('selectedOptions')
-  watchHandler(options) {
+  updateOptions(options) {
     this._selectedOptions = options;
   }
 

@@ -6,6 +6,21 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface KjAccordion {
+        "expanded": boolean;
+        "title": string;
+    }
+    interface KjButton {
+        "header": string;
+    }
+    interface KjInputbutton {
+        "placeholder": string;
+        "value": string;
+    }
+    interface KjModal {
+        "header": string;
+        "show": boolean;
+    }
     interface KjMultiselect {
         "displayProperty": string;
         "options": any[];
@@ -13,6 +28,30 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLKjAccordionElement extends Components.KjAccordion, HTMLStencilElement {
+    }
+    var HTMLKjAccordionElement: {
+        prototype: HTMLKjAccordionElement;
+        new (): HTMLKjAccordionElement;
+    };
+    interface HTMLKjButtonElement extends Components.KjButton, HTMLStencilElement {
+    }
+    var HTMLKjButtonElement: {
+        prototype: HTMLKjButtonElement;
+        new (): HTMLKjButtonElement;
+    };
+    interface HTMLKjInputbuttonElement extends Components.KjInputbutton, HTMLStencilElement {
+    }
+    var HTMLKjInputbuttonElement: {
+        prototype: HTMLKjInputbuttonElement;
+        new (): HTMLKjInputbuttonElement;
+    };
+    interface HTMLKjModalElement extends Components.KjModal, HTMLStencilElement {
+    }
+    var HTMLKjModalElement: {
+        prototype: HTMLKjModalElement;
+        new (): HTMLKjModalElement;
+    };
     interface HTMLKjMultiselectElement extends Components.KjMultiselect, HTMLStencilElement {
     }
     var HTMLKjMultiselectElement: {
@@ -20,10 +59,32 @@ declare global {
         new (): HTMLKjMultiselectElement;
     };
     interface HTMLElementTagNameMap {
+        "kj-accordion": HTMLKjAccordionElement;
+        "kj-button": HTMLKjButtonElement;
+        "kj-inputbutton": HTMLKjInputbuttonElement;
+        "kj-modal": HTMLKjModalElement;
         "kj-multiselect": HTMLKjMultiselectElement;
     }
 }
 declare namespace LocalJSX {
+    interface KjAccordion {
+        "expanded"?: boolean;
+        "title"?: string;
+    }
+    interface KjButton {
+        "header"?: string;
+        "onOnclick"?: (event: CustomEvent<any>) => void;
+    }
+    interface KjInputbutton {
+        "onOnsave"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
+        "value"?: string;
+    }
+    interface KjModal {
+        "header"?: string;
+        "onOnclose"?: (event: CustomEvent<any>) => void;
+        "show"?: boolean;
+    }
     interface KjMultiselect {
         "displayProperty"?: string;
         "onOnselect"?: (event: CustomEvent<any>) => void;
@@ -31,6 +92,10 @@ declare namespace LocalJSX {
         "selectedOptions"?: any[];
     }
     interface IntrinsicElements {
+        "kj-accordion": KjAccordion;
+        "kj-button": KjButton;
+        "kj-inputbutton": KjInputbutton;
+        "kj-modal": KjModal;
         "kj-multiselect": KjMultiselect;
     }
 }
@@ -38,6 +103,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "kj-accordion": LocalJSX.KjAccordion & JSXBase.HTMLAttributes<HTMLKjAccordionElement>;
+            "kj-button": LocalJSX.KjButton & JSXBase.HTMLAttributes<HTMLKjButtonElement>;
+            "kj-inputbutton": LocalJSX.KjInputbutton & JSXBase.HTMLAttributes<HTMLKjInputbuttonElement>;
+            "kj-modal": LocalJSX.KjModal & JSXBase.HTMLAttributes<HTMLKjModalElement>;
             "kj-multiselect": LocalJSX.KjMultiselect & JSXBase.HTMLAttributes<HTMLKjMultiselectElement>;
         }
     }
