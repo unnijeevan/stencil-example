@@ -1,7 +1,18 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage, SpecPage } from '@stencil/core/testing';
 import { KjInputbutton } from './kj-inputbutton';
 
 describe('kj-inputbutton', () => {
+  let page: SpecPage;
+  let element;
+
+  beforeEach(async () => {
+    page = await newSpecPage({
+      components: [KjInputbutton],
+      html: '<kj-inputbutton></kj-inputbutton>'
+    });
+    element = page.rootInstance;
+  });
+  
   it('renders', async () => {
     const page = await newSpecPage({
       components: [KjInputbutton],
@@ -21,5 +32,21 @@ describe('kj-inputbutton', () => {
        </div>
       </kj-inputbutton>
     `);
+  });
+
+  it('should emit current value on button click', async () => {
+    let expectedValue = 'expectedValue';
+    element.value = expectedValue;
+    await page.waitForChanges();
+
+    let buttonElement = page.root.querySelector('button');
+    let buttonElementSpy = jest.fn();
+    page.win.addEventListener('onsave', buttonElementSpy);    
+    buttonElement.click();
+    await page.waitForChanges();
+     
+    expect(buttonElementSpy).toHaveBeenCalled();
+    expect(buttonElementSpy.mock.calls[0][0].detail).toEqual(expectedValue);
+
   });
 });

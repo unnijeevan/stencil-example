@@ -2,6 +2,7 @@ import { Component, ComponentInterface, h, Prop, Event, EventEmitter, Watch } fr
 
 @Component({
   tag: 'kj-modal',
+  styleUrl:'kj-modal.css',
   scoped: true
 })
 export class KjModal implements ComponentInterface {

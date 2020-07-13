@@ -1,0 +1,5 @@
+/*bootstrap style not working for some reason*/
+.fade {
+    background-color: rgb(0,0,0); /*for fallback*/
+    background-color: rgba(0,0,0,0.3);
+}
